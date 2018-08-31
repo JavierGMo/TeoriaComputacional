@@ -32,12 +32,12 @@ def generaLeng2(arg):
     pass
 
 #Funcion que pide el tamaño de la palabra y devuelve esa palabra para agregarla a la lista
-def tamPalabra(E1):
-    tam = int(input("Tamaño de la palabra: "))
+def tamPalabra(E1,palabras):
+    #tam = int(input("Tamaño de la palabra: "))
 
     f = str()
 
-    for x in range(tam):
+    for x in range(palabras):
         f = f + choice(E1)
 
     return f
@@ -54,7 +54,7 @@ def unionL(L1,L2):
             L.append( x + y)
 
 
-    print("\n\n\n**UNION***")
+    print("\n\n\n**Concatenacion***")
     while e < len(L):
         print(L[e])
         e += 1
@@ -62,7 +62,7 @@ def unionL(L1,L2):
 #Funcion de concatenacion de dos lenguajes
 def concatL(L1,L2):
     Lc = L1 + L2
-    print("\n\n*****Concatena L1 y L2: \n", Lc ,"*****")
+    print("\n\n*****Union L1 y L2: \n", Lc ,"*****")
 
 
 
@@ -92,7 +92,7 @@ def diferenciaL(L1,L2):
     print("\n\n****LD2 = L2 - L1 = ", Chh ," ****")
 
 
-""" Inicio del programa """
+""" *********************Inicio del programa********************************* """
 
 
 
@@ -113,10 +113,11 @@ if desea == "individual":
 
     j = 0
 
-    t = int(input("\nNumero de palabras de L1: "))
+    t = int(input("\nNumero de palabras de L1 y L2: "))
+    palabras = int(input("\nTamaño de las palabras: "))
 
     while i < t:
-        p = tamPalabra(E1)
+        p = tamPalabra(E1,palabras)
         L1.append(p)
         i += 1
 
@@ -129,10 +130,10 @@ if desea == "individual":
         i +=1
 
 
-    d = int(input("\nNumero de palabras de L2: "))
+    #d = int(input("\nNumero de palabras de L2: "))
 
-    while j < d:
-        k = tamPalabra(E1)
+    while j < t:#d
+        k = tamPalabra(E1,palabras)
         L2.append(k)
         j += 1
 
@@ -141,7 +142,7 @@ if desea == "individual":
 
     j = 0
 
-    while j < d:
+    while j < t:
         print(L2[j])
         j += 1
 
@@ -161,10 +162,11 @@ elif desea == "rango":
 
     j = 0
 
-    t = int(input("\nNumero de palabras de L1: "))
+    t = int(input("\nNumero de palabras de L1 y L2: "))
+    palabras = int(input("\nTamaño de la palabra: "))
 
     while i < t:
-        p = tamPalabra(E1)
+        p = tamPalabra(E1,palabras)
         L1.append(p)
         i += 1
 
@@ -177,10 +179,10 @@ elif desea == "rango":
         i +=1
 
 
-    d = int(input("\nNumero de palabras de L2: "))
+    #d = int(input("\nNumero de palabras de L2: "))
 
-    while j < d:
-        k = tamPalabra(E1)
+    while j < t:#d
+        k = tamPalabra(E1,palabras)
         L2.append(k)
         j += 1
 
@@ -189,7 +191,7 @@ elif desea == "rango":
 
     j = 0
 
-    while j < d:
+    while j < t:#d
         print(L2[j])
         j += 1
 
@@ -204,7 +206,7 @@ else:
 #Longitut y np
 #print(randrange(10)) random
 
-#Fin del programa
+""" ************************Fin del programa************************************** """
 """
 L1 = list()
 
